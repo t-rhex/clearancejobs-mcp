@@ -26,10 +26,10 @@ def inspect_archives(wheel, source):
     for name in wheel_files:
         assert name in MODULES or name.startswith("clearancejobs_mcp-0.1.0b1.dist-info/"), name
     for name in source_files:
-        assert name in SOURCE_FILES or name == "clearancejobs_mcp.egg-info/SOURCES.txt" or (name.startswith("docs/images/") and name.endswith(".png")), name
+        assert name in SOURCE_FILES or name == "clearancejobs_mcp.egg-info/SOURCES.txt" or (name.startswith("docs/images/") and name.endswith((".png", ".jpg"))), name
     assert MODULES <= wheel_files.keys()
     for name, body in (wheel_files | source_files).items():
-        if name.endswith(".png"):
+        if name.endswith((".png", ".jpg")):
             continue
         text = body.decode("utf-8")
         assert str(Path.home()) not in text, f"Local home path in {name}"

@@ -194,3 +194,13 @@ submission or messaging is included. Normal site requests may record analytics.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md), and
 [CHANGELOG.md](CHANGELOG.md). Please redact account details in reports.
+
+## Screenshots
+
+These screenshots show this project's public setup guide and **fictional example**,
+not a real account, live listings, or a graphical app interface. This project
+runs through an MCP client or Terminal; it does not include a standalone dashboard.
+
+![Setup instructions](docs/images/quick-start.jpg)
+
+![Fictional search example](docs/images/example-session.jpg)

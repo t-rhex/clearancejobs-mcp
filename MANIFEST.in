@@ -4,4 +4,4 @@ include clearancejobs.py clearancejobs_auth.py clearancejobs_mcp.py clearancejob
 include test_clearancejobs.py test_auth.py test_server.py test_setup.py
 include check_mcp.py check_auth_concurrency.py check_beta.py MANIFEST.in
 include examples/search.py
-recursive-include docs/images *.png
+recursive-include docs/images *.jpg *.png
