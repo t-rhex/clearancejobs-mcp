@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+results*.json
+session*.json
+*.har
+.env
+.venv/
+dist/
+build/
+*.egg-info/
+FLORIDA_MATCHES.md
+private/

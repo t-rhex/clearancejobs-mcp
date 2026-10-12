@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clearancejobs-mcp"
+version = "0.1.0b1"
+description = "Unofficial local read-only MCP access to ClearanceJobs"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.13"
+dependencies = ["mcp>=2.3.0,<3"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: MacOS :: MacOS X",
+]
+
+[project.scripts]
+clearancejobs = "clearancejobs:main"
+clearancejobs-auth = "clearancejobs_auth:main"
+clearancejobs-mcp = "clearancejobs_mcp:main"
+clearancejobs-setup = "clearancejobs_setup:main"
+
+[tool.setuptools]
+py-modules = ["clearancejobs", "clearancejobs_auth", "clearancejobs_mcp", "clearancejobs_setup"]
+
+[project.urls]
+Homepage = "https://github.com/t-rhex/clearancejobs-mcp"
+Issues = "https://github.com/t-rhex/clearancejobs-mcp/issues"
