@@ -62,7 +62,10 @@ async def main():
         result = subprocess.run([str(environment / "bin/clearancejobs-setup")],
             check=True, capture_output=True, text=True, env=clean, cwd=temporary)
         config = json.loads(result.stdout)["mcpServers"]["clearancejobs"]
-        assert config == {"command": str(python), "args": ["-m", "clearancejobs_mcp"]}
+        configured_python = Path(config["command"])
+        assert configured_python.parent.resolve() == python.parent.resolve()
+        assert configured_python.samefile(python)
+        assert config["args"] == ["-m", "clearancejobs_mcp"]
         parameters = StdioServerParameters(command=config["command"], args=config["args"],
                                            cwd=str(temporary), env=clean)
         async with Client(parameters, read_timeout_seconds=20) as client:
